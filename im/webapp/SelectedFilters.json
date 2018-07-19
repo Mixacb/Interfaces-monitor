@@ -1,0 +1,29 @@
+{
+	"interfaceType": [{
+		"name": "Inbound",
+		"id": "Inbound"
+	}, {
+		"name": "Outbound",
+		"id": "Outbound"
+	}],
+	"executionState": [{
+		"id": "N",
+		"name": "Not Executed"
+	}, {
+		"id": "W",
+		"name": "Expired"
+	}, {
+		"id": "S",
+		"name": "Success"
+	}, {
+		"id": "E",
+		"name": "Error"
+	}],
+	"SelectedItemKey": "",
+	"SelectedInterfaces": [],
+	"SelectedSystems": [],
+	"SelectedExecutionStates": [],
+	"DescriptionText": "",
+	"number": ["{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? ${i18n>interfaceTarget} : ${i18n>interfaceSource}}", "{parts: ['i18n>interfaceSystem','SelectedFilters>/number'],formatter: 'jQuery.sap.formatMessage'}"] 
+
+}

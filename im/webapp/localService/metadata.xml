@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZINT_MONITOR_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Execution" sap:label="Interface Execution" sap:content-version="1">
+				<Key><PropertyRef Name="Intid"/><PropertyRef Name="Exeid"/></Key><Property Name="Intid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Interface Identifier" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exeid" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="External Identifier" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Execution Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Extim" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Execution Time" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="State" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Execution State" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stat1" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Execution State" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exha1" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Execution Handle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stat2" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Execution State" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exha2" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Execution Handle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stat3" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Execution State" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exha3" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Execution Handle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stat4" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Execution State" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exha4" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Execution Handle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Intcd" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Interface Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Inttx" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Interface Text Desc." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Intty" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Interface Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Syssr" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Source System" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Systr" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Target System" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Frqnc" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Interface Frequency" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Resum" Type="Edm.Boolean" Nullable="false" sap:label="Resumable" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="ToMessages" Relationship="ZINT_MONITOR_SRV.Execution_Messages" FromRole="FromRole_Execution_Messages"
+					ToRole="ToRole_Execution_Messages"/></EntityType>
+			<EntityType Name="Message" sap:label="Execution Message" sap:content-version="1">
+				<Key><PropertyRef Name="Intid"/><PropertyRef Name="Exeid"/><PropertyRef Name="Exhan"/><PropertyRef Name="Msgnr"/></Key><Property Name="Intid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Interface Identifier" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exeid" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="External Identifier" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exhan" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Execution Handle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Msgnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Message Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Msgty" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Message Type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Msgtx" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Message Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="ToExecution" Relationship="ZINT_MONITOR_SRV.Execution_Messages" FromRole="ToRole_Execution_Messages"
+					ToRole="FromRole_Execution_Messages"/></EntityType>
+			<EntityType Name="VH_Interface" sap:label="Interface Attribute" sap:content-version="1">
+				<Key><PropertyRef Name="Intid"/></Key><Property Name="Intid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Interface Identifier" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Inttx" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Interface Text Desc." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Intty" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Interface Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Systm" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Src./Trg. System" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Frqnc" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Interface Frequency" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Activ" Type="Edm.Boolean" Nullable="false" sap:label="Activated Flag" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="VH_System" sap:label="Interface System" sap:content-version="1">
+				<Key><PropertyRef Name="Systm"/></Key><Property Name="Systm" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Src./Trg. System" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="Execution_Messages" sap:content-version="1"><End Type="ZINT_MONITOR_SRV.Execution" Multiplicity="1" Role="FromRole_Execution_Messages"/><End Type="ZINT_MONITOR_SRV.Message" Multiplicity="*" Role="ToRole_Execution_Messages"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Execution_Messages"><PropertyRef Name="Exeid"/><PropertyRef Name="Intid"/></Principal>
+					<Dependent Role="ToRole_Execution_Messages"><PropertyRef Name="Exeid"/><PropertyRef Name="Intid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZINT_MONITOR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Executions" EntityType="ZINT_MONITOR_SRV.Execution" sap:label="Interfaces Executions" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="Messages" EntityType="ZINT_MONITOR_SRV.Message" sap:label="Execution Messages" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="VH_InterfaceSet" EntityType="ZINT_MONITOR_SRV.VH_Interface" sap:label="Interface Attributes" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="VH_SystemSet" EntityType="ZINT_MONITOR_SRV.VH_System" sap:label="Interface Systems" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="Executions_Messages" Association="ZINT_MONITOR_SRV.Execution_Messages" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="Executions" Role="FromRole_Execution_Messages"/><End EntitySet="Messages" Role="ToRole_Execution_Messages"/></AssociationSet>
+				<FunctionImport Name="RunExecution" ReturnType="ZINT_MONITOR_SRV.Execution" EntitySet="Executions" m:HttpMethod="POST"><Parameter Name="Exeid" Type="Edm.String" Mode="In"/><Parameter Name="Intid" Type="Edm.String" Mode="In"/></FunctionImport>
+			</EntityContainer><atom:link rel="self" href="https://213.21.167.186:44300/sap/opu/odata/SAP/ZINT_MONITOR_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="https://213.21.167.186:44300/sap/opu/odata/SAP/ZINT_MONITOR_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

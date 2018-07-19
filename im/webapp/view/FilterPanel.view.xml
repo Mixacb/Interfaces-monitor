@@ -1,0 +1,64 @@
+<mvc:View controllerName="s.im.controller.PanelFilter" xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns="sap.m">
+	<l:VerticalLayout width="100%">
+		<Label/>
+		<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true">
+			<fb:filterItems>
+				<fb:FilterItem name="a" label="{i18n>interfaceType}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<Select forceSelection="true" items="{ path: 'SelectedFilters>/interfaceType'}" selectedKey="{SelectedFilters>/SelectedItemKey}">
+							<core:Item key="{SelectedFilters>id}" text="{SelectedFilters>name}"/>
+						</Select>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="b" label="{i18n>interfaceIdentifier}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<MultiComboBox items="{ path: '/VH_InterfaceSet' }" selectedKeys="{SelectedFilters>/SelectedInterfaces}">
+							<core:Item key="{Intid}" text="{Intid}"/>
+						</MultiComboBox>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="db" label="{i18n>interfaceTextDescription}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<Input type="Text" value="{SelectedFilters>/DescriptionText}"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="c" label= "{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? ${i18n>interfaceTargetSystem} : ${i18n>interfaceSourceSystem}}"
+					labelTooltip="Tooltip Example">
+					<fb:control>
+						<MultiComboBox items="{ path: '/VH_SystemSet' }" selectedKeys="{SelectedFilters>/SelectedSystems}">
+							<core:Item key="{Systm}" text="{Systm}"/>
+						</MultiComboBox>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="r" label="{i18n>executionStart}">
+					<fb:control>
+						<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" value="{SelectedFilters>/DateStart}"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="e" label="{i18n>executionEnd}">
+					<fb:control>
+						<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" value="{SelectedFilters>/DateEnd}"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="q" label="{i18n>executionStart}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<TimePicker id="TP0" valueFormat="HH:mm" displayFormat="HH:mm" support2400="true" value="{SelectedFilters>/TimeStart}"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="l" label="{i18n>executionEnd}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<TimePicker id="TP1" valueFormat="HH:mm" displayFormat="HH:mm" support2400="true" value="{SelectedFilters>/TimeEnd}"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="t" label="{i18n>executionState}" labelTooltip="Tooltip Example">
+					<fb:control>
+						<MultiComboBox items="{ path: 'SelectedFilters>/executionState' }" selectedKeys="{SelectedFilters>/SelectedExecutionStates}">
+							<core:Item key="{SelectedFilters>id}" text="{SelectedFilters>name}"/>
+						</MultiComboBox>
+					</fb:control>
+				</fb:FilterItem>
+			</fb:filterItems>
+		</fb:FilterBar>
+	</l:VerticalLayout>
+</mvc:View>

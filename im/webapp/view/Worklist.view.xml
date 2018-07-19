@@ -1,0 +1,83 @@
+<mvc:View controllerName="s.im.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="wl">
+	<Page id="page" title="{i18n>appTitle}">
+		
+		<content>
+				<mvc:XMLView viewName="s.im.view.FilterPanel"/>
+				<Table id="table" width="auto" items="{ path: '/Executions', sorter: { path: 'Exdat', descending: false } }"
+					noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+					updateFinished="onUpdateFinished">
+					<headerToolbar>
+						<Toolbar>
+							<Title id="tableHeader" text="{i18n>Interfaces} ({SelectedFilters>/countExecutionsItems})"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="nameColumn" width="7%">
+							<Text text="{i18n>Interface}" id="nameColumnTitle"/>
+						</Column>
+						<Column width="11%">
+							<Text text="{i18n>interfaceTextDescription}"/>
+						</Column>
+						<Column width="9%">
+							<Text text="{i18n>code}"/>
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>executionDate}"/>
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>executionTime}"/>
+						</Column>
+						<Column width="7%">
+							<Text text="{i18n>sourceSystem}"/>
+						</Column>
+						<Column width="7%">
+							<Text text="{i18n>targetSystem}"/>
+						</Column>
+						<Column width="12%">
+							<Text text="{i18n>frequency}"/>
+						</Column>
+						<Column visible="{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? false : true}">
+							<Text text="{i18n>fileMoving}"/>
+						</Column>
+						<Column visible="{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? false : true}">
+							<Text text="{i18n>stagingArea}"/>
+						</Column>
+						<Column visible="{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? false : true}">
+							<Text text="{i18n>conversion}"/>
+						</Column>
+						<Column visible="{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? false : true}">
+							<Text text="{i18n>FAMUpload}"/>
+						</Column>
+						<Column visible="{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? true : false}">
+							<Text text="{i18n>extraction}"/>
+						</Column>
+						<Column>
+							<Text text="{i18n>nextExecution}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press="onPress">
+							<cells>
+								<Text text="{Intid}"/>
+								<Text text="{Inttx}"/>
+								<Text text="{Intcd}"/>
+								<Text text="{path: 'Exdat', formatter: '.formatter.Date'}"/>
+								<Text text="{path: 'Extim', formatter: '.formatter.Time'}"/>
+								<Text text="{Syssr}"/>
+								<Text text="{Systr}"/>
+								<Text text="{path: 'Frqnc', formatter: '.formatter.FrequencyText' }"/>
+								<core:Icon src="{path: 'Stat1', formatter: '.formatter.typeOfIcon' }" color="{path:'Stat1', formatter:'.formatter.colorOfIcon'}" app:id="0" press="handlePopoverPress"/>
+								<core:Icon src="{path: 'Stat2', formatter: '.formatter.typeOfIcon' }" color="{path:'Stat2', formatter:'.formatter.colorOfIcon'}" app:id="1" press="handlePopoverPress"/>
+								<core:Icon src="{path: 'Stat3', formatter: '.formatter.typeOfIcon' }" color="{path:'Stat3', formatter:'.formatter.colorOfIcon'}" app:id="2" press="handlePopoverPress"/>
+								<core:Icon src="{path: 'Stat4', formatter: '.formatter.typeOfIcon' }" color="{path:'Stat4', formatter:'.formatter.colorOfIcon'}" app:id="3" press="handlePopoverPress"/>
+								<core:Icon src="{path: 'Stat1', formatter: '.formatter.typeOfIcon' }" color="{path:'Stat1', formatter:'.formatter.colorOfIcon'}" app:id="0" press="handlePopoverPress"/>
+								<core:Icon src="sap-icon://restart" color="#00008B" press="onOpenDialog"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+
+	</Page>
+</mvc:View>
