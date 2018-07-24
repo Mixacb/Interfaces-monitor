@@ -1,7 +1,7 @@
 {
 	"_version": "1.9.0",
 	"sap.app": {
-		"id": "s.im",
+		"id": "s.Interfaces-monitor",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -42,7 +42,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "s.im.view.App",
+			"viewName": "s.Interfaces-monitor.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -63,7 +63,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "s.im.i18n.i18n"
+					"bundleName": "s.Interfaces-monitor.i18n.i18n"
 				}
 			},
 			"SelectedFilters": {
@@ -79,7 +79,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "s.im.view",
+				"viewPath": "s.Interfaces-monitor.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {

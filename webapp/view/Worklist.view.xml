@@ -1,9 +1,9 @@
-<mvc:View controllerName="s.im.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+<mvc:View controllerName="s.Interfaces-monitor.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
 	xmlns:semantic="sap.f.semantic" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="wl">
 	<Page id="page" title="{i18n>appTitle}">
 		
 		<content>
-				<mvc:XMLView viewName="s.im.view.FilterPanel"/>
+				<mvc:XMLView viewName="s.Interfaces-monitor.view.FilterPanel"/>
 				<Table id="table" width="auto" items="{ path: '/Executions', sorter: { path: 'Exdat', descending: false } }"
 					noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 					updateFinished="onUpdateFinished">

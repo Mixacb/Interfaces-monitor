@@ -1,6 +1,6 @@
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="s.im.controller.App"
+	controllerName="s.Interfaces-monitor.controller.App"
 	displayBlock="true"
 	xmlns="sap.m">
 

@@ -1,9 +1,9 @@
 sap.ui.define([
-		"s/im/controller/BaseController"
+		"s/Interfaces-monitor/controller/BaseController"
 	], function (BaseController) {
 		"use strict";
 
-		return BaseController.extend("s.im.controller.NotFound", {
+		return BaseController.extend("s.Interfaces-monitor.controller.NotFound", {
 
 			/**
 			 * Navigates to the worklist when the link is pressed

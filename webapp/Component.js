@@ -2,12 +2,12 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-		"s/im/model/models",
-		"s/im/controller/ErrorHandler"
+		"s/Interfaces-monitor/model/models",
+		"s/Interfaces-monitor/controller/ErrorHandler"
 	], function (UIComponent, Device, models, ErrorHandler) {
 		"use strict";
 
-		return UIComponent.extend("s.im.Component", {
+		return UIComponent.extend("s.Interfaces-monitor.Component", {
 
 			metadata : {
 				manifest: "json"

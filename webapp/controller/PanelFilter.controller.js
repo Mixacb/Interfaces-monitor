@@ -1,5 +1,5 @@
 sap.ui.define([
-	"s/im/controller/BaseController",
+	"s/Interfaces-monitor/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	'sap/m/MessageToast',
 	"sap/ui/model/Filter",
@@ -7,7 +7,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, MessageToast, Filter, FilterOperator) {
 	"use strict";
 
-	return BaseController.extend("s.im.controller.PanelFilter", {
+	return BaseController.extend("s.Interfaces-monitor.controller.PanelFilter", {
 		onBeforeRendering: function () {
 			var oModel = this.getView().getModel("SelectedFilters");
 			var oDateFormat = sap.ui.core.format.DateFormat.getInstance({

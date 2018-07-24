@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="s.im.controller.Object"
+	controllerName="s.Interfaces-monitor.controller.Object"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic">

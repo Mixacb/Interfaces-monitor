@@ -1,6 +1,6 @@
 /*global location history */ //="{path:'/Executions(Intid='{Intid}',Exeid='{Exeid}')/ToMessages/Msgty',formatter:.formatter.typeOfIcon}"
 sap.ui.define([
-	"s/im/controller/BaseController",
+	"s/Interfaces-monitor/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
 	"sap/ui/model/Filter",
@@ -11,7 +11,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator, Fragment, MessageItem, MessagePopover) {
 	"use strict";
 
-	return BaseController.extend("s.im.controller.Worklist", {
+	return BaseController.extend("s.Interfaces-monitor.controller.Worklist", {
 
 		formatter: formatter,
 
@@ -122,7 +122,7 @@ sap.ui.define([
 			// create dialog lazily
 			if (!oDialog) {
 				// create dialog via fragment factory
-				oDialog = sap.ui.xmlfragment(oView.getId(), "s.im.view.NextExecutionDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "s.Interfaces-monitor.view.NextExecutionDialog", this);
 				oView.addDependent(oDialog);
 			}
 
@@ -137,7 +137,7 @@ sap.ui.define([
 
 		handlePopoverPress: function (oEvent) {
 			if (!this._oPopover) {
-				this._oPopover = sap.ui.xmlfragment("s.im.view.popover", this);//creating popover
+				this._oPopover = sap.ui.xmlfragment("s.Interfaces-monitor.view.popover", this);//creating popover
 				this.getView().addDependent(this._oPopover);
 			}
 

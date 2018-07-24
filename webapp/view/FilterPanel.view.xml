@@ -1,4 +1,4 @@
-<mvc:View controllerName="s.im.controller.PanelFilter" xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout"
+<mvc:View controllerName="s.Interfaces-monitor.controller.PanelFilter" xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core" xmlns="sap.m">
 	<l:VerticalLayout width="100%">
 		<Label/>
