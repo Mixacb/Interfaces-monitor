@@ -45,6 +45,7 @@ sap.ui.define([
 				"State"
 			];
 
+
 			if (Type === "Outbound") {
 				FilterArray.push(new Filter("Intty", FilterOperator.EQ, "O"));
 				if (SelectedSystems[0]) {
@@ -105,7 +106,7 @@ sap.ui.define([
 
 			}
 
-			sap.ui.getCore().getEventBus().publish("onSearch", FilterArray); //публикуем событие onSearch, передавая собранный с фильтра FilterArray
+			sap.ui.getCore().getEventBus().publish("onSearch", FilterArray); 
 		}
 
 	});

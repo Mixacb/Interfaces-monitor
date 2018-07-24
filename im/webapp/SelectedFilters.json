@@ -23,7 +23,7 @@
 	"SelectedInterfaces": [],
 	"SelectedSystems": [],
 	"SelectedExecutionStates": [],
-	"DescriptionText": "",
-	"number": ["{= ${SelectedFilters>/SelectedItemKey} === 'Outbound' ? ${i18n>interfaceTarget} : ${i18n>interfaceSource}}", "{parts: ['i18n>interfaceSystem','SelectedFilters>/number'],formatter: 'jQuery.sap.formatMessage'}"] 
+	"DescriptionText": ""
+	
 
 }
